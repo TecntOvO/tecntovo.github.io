@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN" data-page="not-found" class="sidebar-collapsed">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/site.css">
+    <title>页面未找到 · TecntOvO</title>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        let mode = "system";
+        try { mode = localStorage.getItem("tecntovo-theme") || "system"; } catch {}
+        root.dataset.themeMode = mode;
+        root.dataset.theme = mode === "system" ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : mode;
+      })();
+    </script>
+  </head>
+  <body>
+    <aside id="sidebar" class="sidebar" aria-label="侧栏"></aside>
+    <div id="sidebar-scrim" class="sidebar-scrim" aria-hidden="true"></div>
+    <div class="content-shell">
+      <header id="topbar" class="topbar"></header>
+      <main class="page-content not-found">
+        <div>
+          <div class="not-found-code">404</div>
+          <h1>这里没有内容</h1>
+          <p class="lede">你访问的页面可能已移动，或还没有创建。</p>
+          <a class="home-link" href="/">返回首页</a>
+        </div>
+      </main>
+    </div>
+    <script src="/assets/site-config.js"></script>
+    <script src="/assets/site.js"></script>
+  </body>
+</html>

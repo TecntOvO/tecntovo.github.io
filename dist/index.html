@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN" data-page="home">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#14171d" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="TecntOvO 的中文个人主页，记录 2D Gaussian Splatting、电子显微镜图像超分辨率与计算机视觉研究。">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TecntOvO · 个人主页">
+    <meta property="og:description" content="研究笔记、项目记录与技术实践。">
+    <meta property="og:url" content="https://tecntovo.github.io/">
+    <link rel="canonical" href="https://tecntovo.github.io/">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/site.css">
+    <title>TecntOvO · 个人主页</title>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        let mode = "system";
+        try { mode = localStorage.getItem("tecntovo-theme") || "system"; } catch {}
+        root.dataset.themeMode = mode;
+        root.dataset.theme = mode === "system" ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : mode;
+      })();
+    </script>
+  </head>
+  <body>
+    <aside id="sidebar" class="sidebar" aria-label="侧栏"></aside>
+    <div id="sidebar-scrim" class="sidebar-scrim" aria-hidden="true"></div>
+
+    <div class="content-shell">
+      <header id="topbar" class="topbar"></header>
+
+      <main class="page-content">
+        <section class="intro-panel" aria-labelledby="home-title">
+          <p class="eyebrow">研究 · 记录 · 实践</p>
+          <h1 id="home-title">你好，我是 TecntOvO。</h1>
+          <p class="lede">这里记录我在 2D Gaussian Splatting、电子显微镜图像超分辨率与计算机视觉方向上的研究、实验和工程实践。</p>
+          <div class="topic-row" aria-label="研究主题">
+            <span class="topic-chip">2D Gaussian Splatting</span>
+            <span class="topic-chip">VEM Super-Resolution</span>
+            <span class="topic-chip">Computer Vision</span>
+          </div>
+        </section>
+
+        <section class="section-block" aria-labelledby="focus-title">
+          <div class="section-heading">
+            <h2 id="focus-title">研究方向</h2>
+            <span>当前关注</span>
+          </div>
+          <div class="card-grid">
+            <article class="focus-card">
+              <span class="card-index">01</span>
+              <h3>2D 高斯泼溅</h3>
+              <p>关注高效场景表达、可微渲染与二维高斯表示在视觉任务中的方法设计。</p>
+            </article>
+            <article class="focus-card">
+              <span class="card-index">02</span>
+              <h3>VEM 图像超分辨率</h3>
+              <p>面向体电子显微镜数据，研究结构保真、跨切片一致性与细节恢复。</p>
+            </article>
+            <article class="focus-card">
+              <span class="card-index">03</span>
+              <h3>深度学习工程</h3>
+              <p>记录模型设计、训练调试、实验分析，以及从研究原型到可复现实现的过程。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block" aria-labelledby="latest-title">
+          <div class="section-heading">
+            <h2 id="latest-title">最近记录</h2>
+            <span>2026</span>
+          </div>
+          <div class="note-list">
+            <a class="note-item" href="/archives/">
+              <time datetime="2026-09">2026 年 9 月</time>
+              <span>
+                <strong>研究方向更新</strong>
+                <p>当前工作全面转向 2D 高斯泼溅与电子显微镜图像超分辨率。</p>
+              </span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="note-item" href="/about/">
+              <time datetime="2026-09">2026 年 9 月</time>
+              <span>
+                <strong>个人站点上线</strong>
+                <p>一个用于整理研究笔记、项目进展与技术实践的中文空间。</p>
+              </span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">© 2026 TecntOvO · 研究笔记 · 项目记录 · 技术实践</footer>
+    </div>
+
+    <script src="/assets/site-config.js"></script>
+    <script src="/assets/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN" data-page="categories" class="sidebar-collapsed">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="TecntOvO 的研究与技术内容分类。">
+    <link rel="canonical" href="https://tecntovo.github.io/categories/">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/site.css">
+    <title>分类 · TecntOvO</title>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        let mode = "system";
+        try { mode = localStorage.getItem("tecntovo-theme") || "system"; } catch {}
+        root.dataset.themeMode = mode;
+        root.dataset.theme = mode === "system" ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : mode;
+      })();
+    </script>
+  </head>
+  <body>
+    <aside id="sidebar" class="sidebar" aria-label="侧栏"></aside>
+    <div id="sidebar-scrim" class="sidebar-scrim" aria-hidden="true"></div>
+    <div class="content-shell">
+      <header id="topbar" class="topbar"></header>
+      <main class="page-content">
+        <header class="page-header">
+          <p class="eyebrow">内容分类</p>
+          <h1>分类</h1>
+          <p class="lede">按研究主题整理方法、实验与工程记录。</p>
+        </header>
+
+        <div class="category-grid">
+          <article class="category-card">
+            <div class="category-meta">01 · 场景表示</div>
+            <h2>2D Gaussian Splatting</h2>
+            <p>场景表示、可微渲染、几何约束，以及高斯泼溅方法的复现与改进。</p>
+          </article>
+          <article class="category-card">
+            <div class="category-meta">02 · 电子显微镜</div>
+            <h2>VEM 超分辨率</h2>
+            <p>体电子显微镜数据的结构恢复、跨切片上下文建模与定量评估。</p>
+          </article>
+          <article class="category-card">
+            <div class="category-meta">03 · 网络结构</div>
+            <h2>网络与模块设计</h2>
+            <p>注意力机制、全局与局部特征融合，以及面向任务的网络结构分析。</p>
+          </article>
+          <article class="category-card">
+            <div class="category-meta">04 · 工程实践</div>
+            <h2>训练与工程实践</h2>
+            <p>数据流程、损失函数、调试记录、性能分析与可复现实验配置。</p>
+          </article>
+        </div>
+      </main>
+      <footer class="footer">© 2026 TecntOvO · 研究笔记 · 项目记录 · 技术实践</footer>
+    </div>
+    <script src="/assets/site-config.js"></script>
+    <script src="/assets/site.js"></script>
+  </body>
+</html>

@@ -1,77 +1,25 @@
-<!-- markdownlint-disable-next-line -->
-<div align="center">
+# TecntOvO 个人站点
 
-  <!-- markdownlint-disable-next-line -->
-  # Chirpy Jekyll Theme
+一个以中文为主的个人技术站点，视觉与信息架构参考 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)，由 GitHub Pages 托管。
 
-  A minimal, responsive, and feature-rich Jekyll theme for technical writing.
+## 页面与交互
 
-  [![CI][badge-ci]][ci]&nbsp;
-  [![Codacy Badge][badge-codacy]][codacy]&nbsp;
-  [![GitHub license][badge-license]][license]&nbsp;
-  [![Gem Version][badge-gem]][gem]&nbsp;
-  [![Open in Dev Containers][badge-open-container]][open-container]
+- 首页默认展开左侧栏；分类、标签、归档、关于等子页面默认收起侧栏。
+- 左上角按钮可随时展开或收起侧栏。
+- 支持浅色、深色与跟随系统三种主题，选择会保存在当前浏览器。
+- 头像使用 GitHub 头像地址，并在页面加载后尝试同步最新头像与简介。
+- 桌面端采用固定侧栏，移动端自动切换为抽屉式导航。
 
-  [**Live Demo** →][demo]
+## 修改个人信息
 
-  [![Devices Mockup](https://chirpy-img.netlify.app/commons/devices-mockup.png)][demo]
+编辑 `dist/assets/site-config.js`：
 
-</div>
+- `profile`：昵称、头像与简介的本地备用值。
+- `navigation`：侧栏页面标签及顺序。
+- `socialLinks`：底部个人主页按钮。删除数组中的对象即可移除按钮；复制对象并填写 `label`、`href` 与 `icon` 即可添加。
 
-## Features
+目前 B 站按钮使用 B 站空间首页作为占位链接，请将其替换为你的个人空间地址。
 
-- **Design & UX** - Responsive layout, Dark/Light modes, Localized UI language,
-  and Dark mode images.
-- **Content Management** - Pinned posts, Hierarchical categories, Trending tags,
-  Auto-generated Table of Contents, and Last modified dates.
-- **Rich Text Support** - Syntax highlighting, Mathematical expressions, Mermaid
-  diagrams & flowcharts, and Embedded media.
-- **Interactivity & Outreach** - Built-in search, Multiple comment systems, and
-  Atom feeds.
-- **System & Optimization** - PWA support, integrated Web analytics, and
-  advanced SEO performance.
+## 发布
 
-## Documentation
-
-To learn how to use, develop, and upgrade the project, please refer to the
-[Wiki][wiki].
-
-## Contributing
-
-Contributions (_pull requests_, _issues_, and _discussions_) are what make the
-open-source community such an amazing place to learn, inspire, and create. Any
-contributions you make are greatly appreciated.
-For details, please refer to our [Contributing Guidelines][contribute-guide].
-
-## Credits
-
-This project is built on the [Jekyll][jekyllrb] ecosystem and integrates a
-collection of [excellent libraries][lib]. Its avatar and favicon are sourced
-from [ClipartMAX][clipartmax].
-
-Furthermore, thanks to everyone who contributed to the development of this project!
-
-[![all-contributors][contributors-avatar]][contributors]
-
-## License
-
-This project is licensed under the [MIT License][license].
-
-[badge-ci]: https://img.shields.io/github/actions/workflow/status/cotes2020/jekyll-theme-chirpy/ci.yml?logo=github
-[badge-codacy]: https://img.shields.io/codacy/grade/4e556876a3c54d5e8f2d2857c4f43894?logo=codacy
-[badge-license]: https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy?color=goldenrod
-[badge-gem]: https://img.shields.io/gem/v/jekyll-theme-chirpy?&logo=RubyGems&logoColor=ghostwhite&label=gem&color=orange
-[badge-open-container]: https://img.shields.io/badge/Dev_Containers-Open-deepskyblue?logo=linuxcontainers
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[ci]: https://github.com/cotes2020/jekyll-theme-chirpy/actions/workflows/ci.yml?query=event%3Apush+branch%3Amaster
-[codacy]: https://app.codacy.com/gh/cotes2020/jekyll-theme-chirpy/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
-[license]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
-[open-container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/cotes2020/jekyll-theme-chirpy
-[jekyllrb]: https://jekyllrb.com/
-[clipartmax]: https://www.clipartmax.com/middle/m2i8b1m2K9Z5m2K9_ant-clipart-childrens-ant-cute/
-[demo]: https://cotes2020.github.io/chirpy-demo/
-[wiki]: https://github.com/cotes2020/jekyll-theme-chirpy/wiki
-[contribute-guide]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/docs/CONTRIBUTING.md
-[contributors]: https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors
-[contributors-avatar]: https://contrib.rocks/image?repo=cotes2020/jekyll-theme-chirpy&columns=16&max=112
-[lib]: https://github.com/cotes2020/chirpy-static-assets
+`.github/workflows/pages.yml` 会在 `master` 分支的 `dist/` 内容更新后自动发布站点。

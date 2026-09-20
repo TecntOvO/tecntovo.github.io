@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN" data-page="archives" class="sidebar-collapsed">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="TecntOvO 的研究与项目归档。">
+    <link rel="canonical" href="https://tecntovo.github.io/archives/">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/site.css">
+    <title>归档 · TecntOvO</title>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        let mode = "system";
+        try { mode = localStorage.getItem("tecntovo-theme") || "system"; } catch {}
+        root.dataset.themeMode = mode;
+        root.dataset.theme = mode === "system" ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : mode;
+      })();
+    </script>
+  </head>
+  <body>
+    <aside id="sidebar" class="sidebar" aria-label="侧栏"></aside>
+    <div id="sidebar-scrim" class="sidebar-scrim" aria-hidden="true"></div>
+    <div class="content-shell">
+      <header id="topbar" class="topbar"></header>
+      <main class="page-content">
+        <header class="page-header">
+          <p class="eyebrow">时间归档</p>
+          <h1>归档</h1>
+          <p class="lede">按时间梳理研究重点、项目节点与重要更新。</p>
+        </header>
+
+        <section class="archive-panel" aria-labelledby="year-2026">
+          <div id="year-2026" class="archive-year">2026</div>
+          <ol class="timeline">
+            <li>
+              <time datetime="2026-09">09 月</time>
+              <div class="timeline-copy">
+                <h2>个人站点上线</h2>
+                <p>开始在这里持续整理研究笔记、项目进展与技术实践。</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="2026-09">09 月</time>
+              <div class="timeline-copy">
+                <h2>研究方向更新</h2>
+                <p>研究工作全面转向 2D 高斯泼溅和电子显微镜图像超分辨率。</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </main>
+      <footer class="footer">© 2026 TecntOvO · 研究笔记 · 项目记录 · 技术实践</footer>
+    </div>
+    <script src="/assets/site-config.js"></script>
+    <script src="/assets/site.js"></script>
+  </body>
+</html>
