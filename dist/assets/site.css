@@ -647,6 +647,193 @@ h3 {
   font-weight: 750;
 }
 
+.repo-status {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.repo-status[hidden] {
+  display: none;
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+html.sidebar-collapsed .repo-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.repo-card,
+.repo-skeleton {
+  min-width: 0;
+  min-height: 14rem;
+  border-radius: 1rem;
+}
+
+.repo-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 1.3rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 28px rgba(28, 40, 67, 0.04);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.repo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.repo-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 44%, var(--border));
+  box-shadow: var(--shadow);
+}
+
+.repo-card:hover::before {
+  opacity: 1;
+}
+
+.repo-created {
+  position: absolute;
+  top: 1.05rem;
+  right: 1.2rem;
+  color: var(--faint);
+  font-size: 0.72rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.repo-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 11.4rem;
+  padding: 2rem 0 2.35rem;
+}
+
+.repo-card--empty .repo-card-body {
+  justify-content: center;
+}
+
+.repo-name {
+  max-width: 100%;
+  margin: 0;
+  color: var(--heading);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+
+.repo-name--xl {
+  font-size: clamp(1.75rem, 2.3vw, 2.35rem);
+}
+
+.repo-name--lg {
+  font-size: clamp(1.48rem, 1.9vw, 1.95rem);
+}
+
+.repo-name--md {
+  font-size: clamp(1.25rem, 1.55vw, 1.6rem);
+}
+
+.repo-name--sm {
+  font-size: clamp(1.05rem, 1.25vw, 1.3rem);
+}
+
+.repo-description {
+  display: -webkit-box;
+  margin: 1rem 0 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.72;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.repo-branches {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  color: var(--faint);
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.repo-branches .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.repo-skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.repo-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 25%, color-mix(in srgb, var(--accent-soft) 70%, transparent) 45%, transparent 65%);
+  transform: translateX(-100%);
+  animation: repo-loading 1.35s ease-in-out infinite;
+}
+
+.repo-empty {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 0.4rem;
+  padding: 2rem;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.repo-empty strong {
+  color: var(--heading);
+}
+
+.repo-empty a {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+@keyframes repo-loading {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (min-width: 1700px) {
+  .repo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  html.sidebar-collapsed .repo-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .tag-panel,
 .archive-panel,
 .about-card {
@@ -974,6 +1161,11 @@ html.sidebar-collapsed .theme-menu {
     grid-template-columns: 1fr;
   }
 
+  .repo-grid,
+  html.sidebar-collapsed .repo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .focus-card {
     min-height: auto;
   }
@@ -998,6 +1190,16 @@ html.sidebar-collapsed .theme-menu {
 
   .category-grid {
     grid-template-columns: 1fr;
+  }
+
+  .repo-grid,
+  html.sidebar-collapsed .repo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .repo-card,
+  .repo-skeleton {
+    min-height: 13rem;
   }
 
   .note-item {

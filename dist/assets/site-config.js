@@ -8,7 +8,7 @@ window.PERSONAL_SITE = Object.freeze({
   },
   navigation: [
     { id: "home", label: "首页", href: "/", icon: "home" },
-    { id: "categories", label: "分类", href: "/categories/", icon: "grid" },
+    { id: "categories", label: "仓库", href: "/categories/", icon: "repo" },
     { id: "tags", label: "标签", href: "/tags/", icon: "tag" },
     { id: "archives", label: "归档", href: "/archives/", icon: "archive" },
     { id: "about", label: "关于", href: "/about/", icon: "user" }
